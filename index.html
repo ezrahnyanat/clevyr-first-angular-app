@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='angularApp'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Angular App</title>
+</head>
+<body>
+    
+    <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <a class='navbar-brand' href=#>Angular App</a>
+            </div>
+            <ul class='nav navbar-nav'>
+                <li><a href="http://www.github.com/ezrahnyanat" target=_blank>Github</a></li>
+                <li><a href="http://www.twitter.com/ezrah_nyanat" target=_blank>Twitter</a></li>
+                <li><a href="http://www.linkedin.com/in/ezrah-nyanat" target=_blank>LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class='center' ng-controller="hiController">
+        <form>
+            <div class='form-group'>
+                <label for='Name'>Name</label>
+                <input type='text' class='form-control' placeholder='Name' ng-model='name'>             
+            </div>
+        </form>
+        <button ng-click='sayHello()'>Say Hi</button>
+        <h1> {{greeting}} </h1>
+    </div>
+
+    <div class='center' ng-controller="itemController">
+        <button ng-click='groceryList()'>Show Grocery List</button>
+        <ul>
+            <li ng-repeat='item in items'>{{item}}</li>
+        </ul>
+    </div>
+
+    <div class='center'>
+        <button ng-click="blueStyle={color: 'blue'}">Change Color</button>
+        <h1 ng-style='blueStyle'>Change Me</h1>
+    </div>
+
+<script src='./app.js'></script>
+</body>
+</html>
